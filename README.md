@@ -17,19 +17,19 @@
 ## Screenshots
 
 ### Streamlit Dashboard
-![Dashboard](screenshots/streamlit_dashboard.jpg)
-![Dashboard — Categories & States](screenshots/streamlit_dashboard2.jpg)
-![Dashboard — Filtered View](screenshots/streamlit_dashboard3.jpg)
+![Dashboard](Screenshots/streamlit_dashboard.jpg)
+![Dashboard — Categories & States](Screenshots/streamlit_dashboard2.jpg)
+![Dashboard — Filtered View](Screenshots/streamlit_dashboard3.jpg)
 
 ### Airflow DAG — All Tasks Green
-![Airflow DAG](screenshots/airflow_dag.jpg)
+![Airflow DAG](Screenshots/airflow_dag.jpg)
 
 ### dbt Lineage Graph
-![dbt Lineage](screenshots/dbt_lineage.jpg)
-![dbt Lineage — Expanded](screenshots/dbt_lineage2.jpg)
+![dbt Lineage](Screenshots/dbt_lineage.jpg)
+![dbt Lineage — Expanded](Screenshots/dbt_lineage2.jpg)
 
 ### Docker — All Containers Healthy
-![Docker Compose PS](screenshots/dockercompose_ps.jpg)
+![Docker Compose PS](Screenshots/dockercompose_ps.jpg)
 
 ---
 

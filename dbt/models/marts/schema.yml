@@ -1,0 +1,59 @@
+version: 2
+
+models:
+
+  - name: dim_customer
+    description: "Customer dimension (SCD Type 1 — latest snapshot)"
+    columns:
+      - name: customer_key
+        description: "Surrogate key (md5 of customer_id)"
+        tests: [not_null, unique]
+      - name: customer_id
+        tests: [not_null, unique]
+      - name: state
+        tests: [not_null]
+
+  - name: dim_product
+    description: "Product dimension"
+    columns:
+      - name: product_key
+        description: "Surrogate key (md5 of product_id)"
+        tests: [not_null, unique]
+      - name: product_id
+        tests: [not_null, unique]
+      - name: category_name
+        tests: [not_null]
+
+  - name: dim_date
+    description: "Calendar date dimension — one row per purchase date in the dataset"
+    columns:
+      - name: date_key
+        description: "Integer date key in YYYYMMDD format"
+        tests: [not_null, unique]
+      - name: full_date
+        tests: [not_null, unique]
+
+  - name: fact_orders
+    description: "Fact table — order_item grain"
+    columns:
+      - name: order_item_key
+        description: "Surrogate key (md5 of order_id + order_item_id)"
+        tests: [not_null, unique]
+      - name: order_id
+        tests: [not_null]
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: price
+        tests: [not_null]
+      - name: freight_value
+        tests: [not_null]

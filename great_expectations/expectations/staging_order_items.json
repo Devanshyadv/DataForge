@@ -1,0 +1,33 @@
+{
+  "suite_name": "staging_order_items",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "order_id"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "product_id"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "price"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "freight_value"}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {"column": "price", "min_value": 0}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {"column": "freight_value", "min_value": 0}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {"min_value": 1}
+    }
+  ]
+}

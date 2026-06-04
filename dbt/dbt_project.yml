@@ -1,0 +1,20 @@
+name: 'dataforge'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dataforge'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  dataforge:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: warehouse
+      +materialized: table

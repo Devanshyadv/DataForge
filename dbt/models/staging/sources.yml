@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: staging
+    description: "Raw Olist data loaded by the Python ingestion script"
+    tables:
+      - name: orders
+        description: "One row per order"
+      - name: customers
+        description: "One row per customer"
+      - name: products
+        description: "One row per product listing"
+      - name: order_items
+        description: "One row per item within an order"
+      - name: order_payments
+        description: "One row per payment method per order (an order can have multiple)"

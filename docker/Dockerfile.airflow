@@ -1,0 +1,15 @@
+FROM apache/airflow:2.9.2
+
+USER root
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Airflow image blocks pip as root — switch to airflow user for pip
+USER airflow
+RUN pip install --no-cache-dir \
+    pandas==2.2.2 \
+    psycopg2-binary==2.9.9 \
+    dbt-core==1.8.2 \
+    dbt-postgres==1.8.2 \
+    "pandera==0.18.3"

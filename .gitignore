@@ -1,0 +1,34 @@
+# Environment
+.env
+
+# Data files (large CSVs not committed)
+data/raw/*.csv
+data/raw/*.parquet
+
+# Airflow logs
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/.user.yml
+
+# dbt docs (generated — not committed)
+dbt_docs/
+
+# Great Expectations
+great_expectations/uncommitted/
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

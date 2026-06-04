@@ -1,0 +1,28 @@
+{
+  "suite_name": "staging_order_payments",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "order_id"}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {"column": "payment_value"}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {"column": "payment_value", "min_value": 0}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "payment_type",
+        "value_set": ["credit_card", "boleto", "voucher", "debit_card", "not_defined"]
+      }
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {"min_value": 1}
+    }
+  ]
+}
